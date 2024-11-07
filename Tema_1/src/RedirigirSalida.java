@@ -17,7 +17,8 @@ public class RedirigirSalida {
 
             process.waitFor();
             System.out.println("proceso terminado. Revisa el archivo de salida.txt");
-        } catch (IOException | InterruptedException e) {
+        }
+        catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }

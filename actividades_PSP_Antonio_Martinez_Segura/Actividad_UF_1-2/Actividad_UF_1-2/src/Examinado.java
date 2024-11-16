@@ -1,8 +1,11 @@
 import java.util.Random;
 
+//Hilo simulando a los estudiantes haciendo un examen. Coge un examen de la cola del buffer
+//y con el metodo run generamos respuestas aleatorias
+
 public class Examinado implements Runnable{
     private Thread hilo;
-    BufferExamenes buffer;
+    private BufferExamenes buffer;
 
     public Thread getHilo() {
 
@@ -20,8 +23,6 @@ public class Examinado implements Runnable{
         hilo.start();
 
     }
-
-
 
     @Override
 

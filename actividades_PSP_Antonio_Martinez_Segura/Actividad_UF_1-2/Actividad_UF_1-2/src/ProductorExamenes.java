@@ -1,5 +1,8 @@
 import java.time.LocalDateTime;
 
+
+//En esta clase se crean los examenes para ponerlos en la clase BufferExamenes
+
 public class ProductorExamenes implements Runnable{
     private BufferExamenes buffer;
     private static int numeroExamen = 0;
@@ -9,33 +12,19 @@ public class ProductorExamenes implements Runnable{
 
     public ProductorExamenes(BufferExamenes buffer) {
         this.buffer = buffer;
+        // Incrementa el contador de exámenes (variable numeroExamen).
         numeroExamen++;
+        //creamos hilo con el nombre "E"
         this.hilo = new Thread(this, "E" + numeroExamen);
-        //iniciamos hilo
+        //iniciamos hilo para producir el examen
         hilo.start();
-
-// Incrementa el contador de exámenes (variable numeroExamen).
-
-
-
-// Construye el hilo. El nombre será la letra E seguida
-
-// del valor de la variable numeroExamen.
-
-
-
-// Establece el valor de la propiedad buffer
-
-
-
-// Inicia el hilo.
 
     }
 
+    //Como la clase implementa a Runnable, hay que sobreescribir el metodo run() y define la tarea del hilo
     @Override
-
     public void run() {
-
+        //obtener año actual
         int aa = LocalDateTime.now().getYear();
 
         // Generamos del código de examen.
